@@ -55,4 +55,11 @@ public class LegoService {
 		Lego lego=list.get(0);
 		return lego.getId()+"#"+lego.getRun()+"#"+lego.getSpeed()+"#"+lego.getTurn();
 	}
+    @Path("/playmusic")
+    @POST
+    @Produces(MediaType.TEXT_PLAIN)
+    public String playMusic() {
+        RunLego.playLondonBridgeMusic(); // Call the method to play music
+        return "Music played successfully";
+    }
 }
