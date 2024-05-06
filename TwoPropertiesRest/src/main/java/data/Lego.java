@@ -22,6 +22,7 @@ public class Lego {
 	private int run;
 	private int speed;
 	private int turn;
+	private int time
 	
 	public int getId() {
 		return id;
