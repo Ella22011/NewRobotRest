@@ -22,7 +22,7 @@
 		xhttp.onreadystatechange = function() {
 		  if (this.readyState == 4 && this.status == 200) {
 		   var settings=JSON.parse(this.responseText);
-		   document.getElementById("settings").innerHTML="ID="+settings.id+" Run="+settings.run+" Speed="+settings.speed+" Turn="+settings.turn;
+		   document.getElementById("settings").innerHTML="ID="+settings.id+" Run="+settings.run+" Speed="+settings.speed+" Turn="+settings.turn+" Timer="+settings.timer;
 		  }
 		};
 		
