@@ -47,5 +47,11 @@ public class Lego {
 	public void setTurn(int turn) {
 		this.turn = turn;
 	}
+	public int getTime() {
+		return time;
+	}
+	public void setTime(int time) {
+		this.time = time;
+	}
 
 }
