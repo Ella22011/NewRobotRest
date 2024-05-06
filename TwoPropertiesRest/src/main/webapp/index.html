@@ -13,6 +13,7 @@
   lego.run=1;
   lego.speed=30;
   lego.turn=0;
+  lego.timer=0;
   function sendData(form){
 		lego.speed=form.speed.value;
 		var json=JSON.stringify(lego);
@@ -41,6 +42,10 @@
 	  lego.run=0;
 	  sendData(form);
   }
+  function startTimer(form){
+	lego.timer=lego.timer=0
+	sendData(form);
+}
   </script>
     <h1>Lego Settings!</h1>
 	<h3>Lego</h3>
@@ -53,6 +58,7 @@
 	<input type='button' name='right' value='Right' onclick='turnRight(this.form);'>
 	<input type='button' name='stop' value='STOP' onclick='stoplego(this.form);'>
 	<input type='button' name='ok' value='OK' onclick='sendData(this.form);'>
+	Timer: <input type='text' name='timer' value=''><br>
 	</form>
 	<p id='settings'>
 	</p>
