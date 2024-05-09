@@ -1,6 +1,5 @@
 package services;
 
-import java.io.File;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -8,17 +7,15 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 import javax.ws.rs.Consumes;
-import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.Response.ResponseBuilder;
 
-import data.*;
+import data.Lego;
+//import threads.RunLego;
+
 
 @Path("/lego")
 public class LegoService {
@@ -30,7 +27,6 @@ public class LegoService {
 	public String getLego() {
 		return "Lego service";
 	}
-	
 	
 	@Path("/setvalues")
 	@POST
@@ -55,11 +51,11 @@ public class LegoService {
 		Lego lego=list.get(0);
 		return lego.getId()+"#"+lego.getRun()+"#"+lego.getSpeed()+"#"+lego.getTurn();
 	}
-    @Path("/playmusic")
-    @POST
-    @Produces(MediaType.TEXT_PLAIN)
-    public String playMusic() {
-        RunLego.playLondonBridgeMusic(); // Call the method to play music
-        return "Music played successfully";
-    }
+//    @Path("/playmusic")
+//    @POST
+//    @Produces(MediaType.TEXT_PLAIN)
+//    public String playMusic() {
+//        RunLego.playLondonBridgeMusic(); // Call the method to play music
+//        return "Music played successfully";
+//    }
 }

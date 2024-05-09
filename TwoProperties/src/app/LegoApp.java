@@ -12,7 +12,7 @@ public class LegoApp {
 
 		Thread runLegoThread=new Thread(runLego);
 		Thread readDataThread=new Thread(readData);
-		runLegoThread.start(); //Säikeen käynnistys
-		readDataThread.start(); //Virtuaalikone aloittaa säikeen kun ehtii
+		runLegoThread.start(); //Threads start
+		readDataThread.start(); //Virtual computer starts thread
 	}
 }

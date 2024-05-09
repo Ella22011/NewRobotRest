@@ -226,6 +226,7 @@
                         </goals>
                                     
                         <configuration>
+                        <address>0.0.0.0</address>
                                           
                             <rules>
                                                 

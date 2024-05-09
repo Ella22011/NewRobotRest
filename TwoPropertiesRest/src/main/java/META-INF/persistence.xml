@@ -21,9 +21,9 @@
 <!--  ddlGeneration == database tables will be created, if they do not exist. The database show be created beforehand--> 
 	    <properties>
 		    <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-		    <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:6034/twoproperties" />
-		    <property name="javax.persistence.jdbc.user" value="donald" />
-		    <property name="javax.persistence.jdbc.password" value="kukkuu" />
+		    <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:6034/lego_database" />
+		    <property name="javax.persistence.jdbc.user" value="root" />
+		    <property name="javax.persistence.jdbc.password" value="password" />
 
 <!--
  		    <property name="eclipselink.ddl-generation" value="create-tables" />
