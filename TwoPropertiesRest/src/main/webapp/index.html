@@ -11,10 +11,10 @@
   var lego=new Object();
   lego.id=1;
   lego.run=1;
-  lego.speed=30;
+  lego.speed=0;
   lego.turn=0;
   function sendData(form){
-		lego.speed=form.speed.value;
+		//lego.speed=form.speed.value;
 		var json=JSON.stringify(lego);
 		var xhttp = new XMLHttpRequest();
 		
@@ -41,6 +41,14 @@
 	  lego.run=0;
 	  sendData(form);
   }
+  function speeddown(form){
+	  lego.speed=lego.speed-10;
+	  sendData(form);
+  }  
+  function speedup(form){
+	  lego.speed=lego.speed+10;
+	  sendData(form);
+  }
 
   </script>
     <h1>Lego Settings!</h1>
@@ -49,11 +57,12 @@
 	</p>
 	<h3>New values</h3>
 	<form id='legoform'>
-	Speed: <input type='text' name='speed' value=''><br>
+<!-- 	Speed: <input type='text' name='speed' value=''><br> -->
 	<input type='button' name='left' value='Left' onclick='turnLeft(this.form);'>
 	<input type='button' name='right' value='Right' onclick='turnRight(this.form);'>
 	<input type='button' name='stop' value='STOP' onclick='stoplego(this.form);'>
-	<!--  <input type='button' name='music' value='Play Music' onclick='playMusic(this.form);'> -->
+	<input type='button' name='speedDown' value='Speed up' onclick='speedup(this.form);'>
+	<input type='button' name='speedUp' value='Speed down' onclick='speeddown(this.form);'>
 	<input type='button' name='ok' value='OK' onclick='sendData(this.form);'>
 	</form>
 	<p id='settings'>
