@@ -28,7 +28,26 @@
 		xhttp.open("POST","/rest/lego/setvalues",true);
 		xhttp.setRequestHeader("Content-type","application/json");
 		xhttp.send(json);
+		getHistory();
 	}
+   function getHistory() {
+	    var xhttp = new XMLHttpRequest();
+
+	    xhttp.onreadystatechange = function() {
+	        if (this.readyState == 4 && this.status == 200) {
+	            let history = JSON.parse(this.responseText);
+	            let historyHTML = "<ul>";
+	            history.forEach(function(item) {
+	                historyHTML += "<li>ID: " + item.id + ", Run: " + item.run + ", Speed: " + item.speed + ", Turn: " + item.turn + "</li>";
+	            });
+	            historyHTML += "</ul>";
+	            document.getElementById("history").innerHTML = historyHTML;
+	        }
+	    };
+	    xhttp.open("GET", "/rest/lego/gethistory", true);
+	    xhttp.send();
+	}
+
   function turnLeft(form){
 	  lego.turn=lego.turn-10;
 	  sendData(form);
@@ -49,7 +68,6 @@
 	  lego.speed=lego.speed+10;
 	  sendData(form);
   }
-
   </script>
     <h1>Lego Settings!</h1>
 	<h3>Lego</h3>
@@ -63,9 +81,12 @@
 	<input type='button' name='stop' value='STOP' onclick='stoplego(this.form);'>
 	<input type='button' name='speedDown' value='Speed up' onclick='speedup(this.form);'>
 	<input type='button' name='speedUp' value='Speed down' onclick='speeddown(this.form);'>
-	<input type='button' name='ok' value='OK' onclick='sendData(this.form);'>
+ 	<input type='button' name='ok' value='OK' onclick='sendData(this.form);'>
 	</form>
 	<p id='settings'>
 	</p>
+	<h3>Settings History</h3>
+	<p id="history">
+	    </p>
   </body>
 </html>

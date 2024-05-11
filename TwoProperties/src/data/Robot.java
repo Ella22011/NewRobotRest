@@ -1,14 +1,11 @@
 package data;
 
-import lejos.hardware.Sound;
 
 public class Robot {
 	private static int id;
 	private static int speed;
 	private static int turn;
-	private static int run=1;
-	private static int music;
-	
+	private static int run=1;	
 	
 	public static int getId() {
 		return id;
@@ -24,19 +21,6 @@ public class Robot {
 			//id remains unchanged
 		}
 	}
-	 public static void playLondonBridgeMusic() {
-		  int[] notes = { 392, 392, 440, 392, 349, 330, 294 };
-		  int[] durations = { 200, 200, 400, 200, 200, 400, 400 };
-		  // Play the song
-		  for (int i = 0; i < notes.length; i++) {
-		      Sound.playTone(notes[i], durations[i]);
-		      try {
-		          Thread.sleep(durations[i] + 50); // Add a small delay between notes
-		      } catch (InterruptedException e) {
-		          e.printStackTrace();
-		      }
-		  }
-		}
 	public static int getSpeed() {
 		return speed;
 	}

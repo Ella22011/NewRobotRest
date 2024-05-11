@@ -1,6 +1,9 @@
 package services;
 
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.List;
+import java.util.ListIterator;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -14,7 +17,6 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import data.Lego;
-
 
 @Path("/lego")
 public class LegoService {
@@ -50,5 +52,15 @@ public class LegoService {
 		Lego lego=list.get(0);
 		return lego.getId()+"#"+lego.getRun()+"#"+lego.getSpeed()+"#"+lego.getTurn();
 	}
-	
+	@Path("/gethistory")
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Lego> getHistory() {
+	    EntityManager em = emf.createEntityManager();
+	    em.getTransaction().begin();
+	    Query q = em.createQuery("select s from Lego s order by s.id desc").setMaxResults(10);
+	    List<Lego> list = q.getResultList();
+	    em.getTransaction().commit();
+	    return list;
+	}
 }
