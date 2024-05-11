@@ -1,7 +1,6 @@
 # GROUP 16
 ### Ella Heikkinen
-- Made a new button to HTML form called "Play Music"
-  - Button calls a playmusic() function that sends a request to /rest/lego/playmusic when the button is clicked.
+- Made buttons for slowing down and speeding up
 
 ### Niklas Salmi
 - Add what you did
