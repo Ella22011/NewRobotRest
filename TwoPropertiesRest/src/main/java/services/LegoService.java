@@ -1,10 +1,6 @@
 package services;
 
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.List;
-import java.util.ListIterator;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;

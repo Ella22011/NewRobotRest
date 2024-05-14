@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
     <title>Group 16</title>
-    
+    <link rel="stylesheet" href="styles.css">
   </head>
 
   <body>
@@ -30,7 +30,7 @@
 		xhttp.send(json);
 		getHistory();
 	}
-   function getHistory() {
+  function getHistory() {
 	    var xhttp = new XMLHttpRequest();
 
 	    xhttp.onreadystatechange = function() {
@@ -46,6 +46,16 @@
 	    };
 	    xhttp.open("GET", "/rest/lego/gethistory", true);
 	    xhttp.send();
+	}
+
+  function moveForward(form) {
+	    lego.speed = Math.abs(lego.speed); // Ensure speed is positive
+	    sendData(form);
+	}
+
+	function moveBackward(form) {
+	    lego.speed = -Math.abs(lego.speed); // Ensure speed is negative
+	    sendData(form);
 	}
 
   function turnLeft(form){
@@ -74,15 +84,21 @@
 	<p id='lego'>
 	</p>
 	<h3>New values</h3>
-	<form id='legoform'>
-<!-- 	Speed: <input type='text' name='speed' value=''><br> -->
-	<input type='button' name='left' value='Left' onclick='turnLeft(this.form);'>
-	<input type='button' name='right' value='Right' onclick='turnRight(this.form);'>
-	<input type='button' name='stop' value='STOP' onclick='stoplego(this.form);'>
-	<input type='button' name='speedDown' value='Speed up' onclick='speedup(this.form);'>
-	<input type='button' name='speedUp' value='Speed down' onclick='speeddown(this.form);'>
- 	<input type='button' name='ok' value='OK' onclick='sendData(this.form);'>
-	</form>
+    <form id='legoform'>
+    <!-- Speed: <input type='text' name='speed' value=''><br> -->
+    <div class="button-group">
+      <input type='button' name='forward' value='Forward' onclick='moveForward(this.form);'>
+      <input type='button' name='backward' value='Backward' onclick='moveBackward(this.form);'>
+      <input type='button' name='left' value='Left' onclick='turnLeft(this.form);'>
+      <input type='button' name='right' value='Right' onclick='turnRight(this.form);'>
+      <input type='button' name='speedDown' value='Speed up' onclick='speedup(this.form);'>
+      <input type='button' name='speedUp' value='Speed down' onclick='speeddown(this.form);'>
+    </div>
+    <div class="button-group">
+      <input type='button' name='stop' value='STOP' onclick='stoplego(this.form);'>
+      <input type='button' name='ok' value='OK' onclick='sendData(this.form);'>
+    </div>
+    </form>
 	<p id='settings'>
 	</p>
 	<h3>Settings History</h3>
