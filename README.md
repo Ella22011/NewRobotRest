@@ -16,6 +16,8 @@
 ### The website:
 ![image](https://github.com/Ella22011/RestfulRobot/assets/142878147/a3f7094a-636c-4092-b33f-c3be4a8fa923)
 
+### The Lego table:
+![image](https://github.com/Ella22011/RestfulRobot/assets/142878147/9cdc4228-1a2d-4611-83ee-560c8423b0e7)
 
 ## Settings
 
