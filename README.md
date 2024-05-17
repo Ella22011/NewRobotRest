@@ -25,7 +25,7 @@
 Users can set the speed of the Lego robot. The setting is saved into a database.
 
 ### As a user, I can make the robot turn, go backwards and control its speed
-Users can make the robot slow down, speed up, turn right and left and go forward and backward. The settings are saved into a database.
+Users can make the robot slow down, speed up, turn right and left and go forward and backwards. The settings are saved into a database.
 
 ## Statistics
 
