@@ -11,6 +11,9 @@ import java.net.URL;
 
 import data.Robot;
 
+/**
+ * Thread that reads data from the web service and updates the Robot state.
+ */
 
 public class ReadData implements Runnable{
     URL url = null;
@@ -30,7 +33,7 @@ public class ReadData implements Runnable{
 			}
 			try {
 				//url = new URL("http://192.168.72.156:8080/rest/lego/getvalues");
-				url = new URL("http://192.168.1.176:8080/rest/lego/getvalues");	//check ip before use		
+				url = new URL("http://192.168.207.111:8080/rest/lego/getvalues");	//check ip before use		
 				conn = (HttpURLConnection)url.openConnection();
 				InputStream is=null;
 				try {
